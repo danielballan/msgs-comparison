@@ -1,0 +1,39 @@
+DeltaListScanPlan([det], motor, [1, 3, 8])
+stage: (mover: motor), (), {}
+stage: (reader: det), (), {}
+open_run: (None), (), {'plan_type': 'DeltaListScanPlan', 'motors': ['motor'], 'plan_args': {'motor': 'mover: motor', 'steps': '[1, 3, 8]', 'detectors': '[reader: det]'}, 'init_pos': 0, 'detectors': ['det']}
+wait: (None), ('_flyers',), {}
+checkpoint: (None), (), {}
+set: (mover: motor), (1,), {'block_group': 'A'}
+wait: (None), ('A',), {}
+create: (None), (), {'name': 'primary'}
+trigger: (reader: det), (), {'block_group': 'B'}
+wait: (None), ('B',), {}
+read: (reader: det), (), {}
+read: (mover: motor), (), {}
+save: (None), (), {}
+checkpoint: (None), (), {}
+set: (mover: motor), (3,), {'block_group': 'A'}
+wait: (None), ('A',), {}
+create: (None), (), {'name': 'primary'}
+trigger: (reader: det), (), {'block_group': 'B'}
+wait: (None), ('B',), {}
+read: (reader: det), (), {}
+read: (mover: motor), (), {}
+save: (None), (), {}
+checkpoint: (None), (), {}
+set: (mover: motor), (8,), {'block_group': 'A'}
+wait: (None), ('A',), {}
+create: (None), (), {'name': 'primary'}
+trigger: (reader: det), (), {'block_group': 'B'}
+wait: (None), ('B',), {}
+read: (reader: det), (), {}
+read: (mover: motor), (), {}
+save: (None), (), {}
+wait: (None), ('_flyers',), {}
+close_run: (None), (), {}
+unstage: (mover: motor), (), {}
+unstage: (reader: det), (), {}
+set: (mover: motor), (0,), {'block_group': 'A'}
+wait: (None), ('A',), {}
+checkpoint: (None), (), {}
