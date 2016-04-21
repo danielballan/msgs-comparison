@@ -1,17 +1,16 @@
 count_with_flyers
 stage: (reader: det), (), {}
-open_run: (None), (), {'plan_type': 'Count', 'plan_args': {'delay': '0', 'detectors': '[reader: det]', 'num': '1'}, 'detectors': ['det']}
-kickoff: (<bluesky.examples.MockFlyer object at 0x103be4978>), (), {'block_group': '_flyers'}
-wait: (None), ('_flyers',), {}
+open_run: (None), (), {'detectors': ['det'], 'plan_args': {'num': 1, 'detectors': ['reader: det']}}
+kickoff: (<bluesky.examples.MockFlyer object at 0x1038e67b8>), (), {'block_group': 'flyers-350c44'}
 checkpoint: (None), (), {}
 create: (None), (), {'name': 'primary'}
-trigger: (reader: det), (), {'block_group': 'A'}
-wait: (None), ('A',), {}
+trigger: (reader: det), (), {'block_group': 'trigger-839a97'}
+wait: (None), ('trigger-839a97',), {}
 read: (reader: det), (), {}
 save: (None), (), {}
 sleep: (None), (0,), {}
-collect: (<bluesky.examples.MockFlyer object at 0x103be4978>), (), {'block_group': '_flyers'}
-wait: (None), ('_flyers',), {}
+wait: (None), ('flyers-350c44',), {}
+collect: (<bluesky.examples.MockFlyer object at 0x1038e67b8>), (), {}
 close_run: (None), (), {}
 unstage: (reader: det), (), {}
 checkpoint: (None), (), {}

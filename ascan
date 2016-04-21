@@ -1,36 +1,37 @@
 AbsScanPlan([det], motor, 1, 5, 3)
-stage: (mover: motor), (), {}
 stage: (reader: det), (), {}
-open_run: (None), (), {'plan_type': 'AbsScanPlan', 'motors': ['motor'], 'plan_args': {'motor': 'mover: motor', 'start': '1', 'stop': '5', 'detectors': '[reader: det]', 'num': '3'}, 'detectors': ['det']}
-wait: (None), ('_flyers',), {}
+stage: (mover: motor), (), {}
+open_run: (None), (), {'detectors': ['det'], 'motors': ['motor'], 'plan_args': {'num': 3, 'detectors': ['reader: det'], 'start': 1, 'per_step': 'None', 'stop': 5}}
 checkpoint: (None), (), {}
-set: (mover: motor), (1.0,), {'block_group': 'A'}
-wait: (None), ('A',), {}
+set: (mover: motor), (1.0,), {'block_group': 'set-0980b8'}
+wait: (None), ('set-0980b8',), {}
 create: (None), (), {'name': 'primary'}
-trigger: (reader: det), (), {'block_group': 'B'}
-wait: (None), ('B',), {}
+trigger: (reader: det), (), {'block_group': 'trigger-25954a'}
+trigger: (mover: motor), (), {'block_group': 'trigger-25954a'}
+wait: (None), ('trigger-25954a',), {}
 read: (reader: det), (), {}
 read: (mover: motor), (), {}
 save: (None), (), {}
 checkpoint: (None), (), {}
-set: (mover: motor), (3.0,), {'block_group': 'A'}
-wait: (None), ('A',), {}
+set: (mover: motor), (3.0,), {'block_group': 'set-a58bd3'}
+wait: (None), ('set-a58bd3',), {}
 create: (None), (), {'name': 'primary'}
-trigger: (reader: det), (), {'block_group': 'B'}
-wait: (None), ('B',), {}
+trigger: (reader: det), (), {'block_group': 'trigger-ccf28f'}
+trigger: (mover: motor), (), {'block_group': 'trigger-ccf28f'}
+wait: (None), ('trigger-ccf28f',), {}
 read: (reader: det), (), {}
 read: (mover: motor), (), {}
 save: (None), (), {}
 checkpoint: (None), (), {}
-set: (mover: motor), (5.0,), {'block_group': 'A'}
-wait: (None), ('A',), {}
+set: (mover: motor), (5.0,), {'block_group': 'set-afa61b'}
+wait: (None), ('set-afa61b',), {}
 create: (None), (), {'name': 'primary'}
-trigger: (reader: det), (), {'block_group': 'B'}
-wait: (None), ('B',), {}
+trigger: (reader: det), (), {'block_group': 'trigger-273928'}
+trigger: (mover: motor), (), {'block_group': 'trigger-273928'}
+wait: (None), ('trigger-273928',), {}
 read: (reader: det), (), {}
 read: (mover: motor), (), {}
 save: (None), (), {}
-wait: (None), ('_flyers',), {}
 close_run: (None), (), {}
 unstage: (mover: motor), (), {}
 unstage: (reader: det), (), {}

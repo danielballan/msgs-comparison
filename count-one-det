@@ -1,15 +1,13 @@
 Count([det])
 stage: (reader: det), (), {}
-open_run: (None), (), {'plan_type': 'Count', 'plan_args': {'delay': '0', 'detectors': '[reader: det]', 'num': '1'}, 'detectors': ['det']}
-wait: (None), ('_flyers',), {}
+open_run: (None), (), {'detectors': ['det'], 'plan_args': {'num': 1, 'detectors': ['reader: det']}}
 checkpoint: (None), (), {}
 create: (None), (), {'name': 'primary'}
-trigger: (reader: det), (), {'block_group': 'A'}
-wait: (None), ('A',), {}
+trigger: (reader: det), (), {'block_group': 'trigger-c4472c'}
+wait: (None), ('trigger-c4472c',), {}
 read: (reader: det), (), {}
 save: (None), (), {}
 sleep: (None), (0,), {}
-wait: (None), ('_flyers',), {}
 close_run: (None), (), {}
 unstage: (reader: det), (), {}
 checkpoint: (None), (), {}
