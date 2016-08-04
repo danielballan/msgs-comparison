@@ -1,8 +1,8 @@
 count_with_flyers
-stage: (<bluesky.examples.MockFlyer object at 0x108960da0>), (), {}
+stage: (<bluesky.examples.MockFlyer object at 0x108359cc0>), (), {}
 stage: (reader: det), (), {}
-open_run: (None), (), {'num_steps': 1, 'detectors': ['det'], 'plan_name': 'count', 'plan_args': {'detectors': ['reader: det'], 'num': 1}}
-kickoff: (<bluesky.examples.MockFlyer object at 0x108960da0>), (), {'group': 'PLACEHOLDER'}
+open_run: (None), (), {'num_steps': 1, 'detectors': ['det'], 'plan_args': {'num': 1, 'detectors': ['reader: det']}, 'plan_name': 'count'}
+kickoff: (<bluesky.examples.MockFlyer object at 0x108359cc0>), (), {'group': 'PLACEHOLDER'}
 wait: (None), (), {'group': 'PLACEHOLDER'}
 checkpoint: (None), (), {}
 trigger: (reader: det), (), {'group': 'PLACEHOLDER'}
@@ -11,9 +11,9 @@ create: (None), (), {'name': 'primary'}
 read: (reader: det), (), {}
 save: (None), (), {}
 sleep: (None), (0,), {}
-complete: (<bluesky.examples.MockFlyer object at 0x108960da0>), (), {'group': 'PLACEHOLDER'}
+complete: (<bluesky.examples.MockFlyer object at 0x108359cc0>), (), {'group': 'PLACEHOLDER'}
 wait: (None), (), {'group': 'PLACEHOLDER'}
-collect: (<bluesky.examples.MockFlyer object at 0x108960da0>), (), {}
+collect: (<bluesky.examples.MockFlyer object at 0x108359cc0>), (), {}
 close_run: (None), (), {}
 unstage: (reader: det), (), {}
-unstage: (<bluesky.examples.MockFlyer object at 0x108960da0>), (), {}
+unstage: (<bluesky.examples.MockFlyer object at 0x108359cc0>), (), {}

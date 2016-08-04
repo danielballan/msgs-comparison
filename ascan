@@ -1,7 +1,7 @@
 AbsScanPlan([det], motor, 1, 5, 3)
 stage: (reader: det), (), {}
 stage: (mover: motor), (), {}
-open_run: (None), (), {'detectors': ['det'], 'plan_name': 'scan', 'plan_pattern_args': {'start': 1, 'stop': 5, 'num': 3}, 'motors': ['motor'], 'plan_pattern': 'linspace', 'plan_args': {'detectors': ['reader: det'], 'start': 1, 'stop': 5, 'motor': 'mover: motor', 'num': 3, 'per_step': 'None'}, 'plan_pattern_module': 'numpy', 'num_steps': 3}
+open_run: (None), (), {'motors': ['motor'], 'plan_name': 'scan', 'plan_pattern_args': {'num': 3, 'stop': 5, 'start': 1}, 'num_steps': 3, 'detectors': ['det'], 'plan_pattern_module': 'numpy', 'plan_pattern': 'linspace', 'plan_args': {'start': 1, 'motor': 'mover: motor', 'num': 3, 'detectors': ['reader: det'], 'per_step': 'None', 'stop': 5}}
 checkpoint: (None), (), {}
 set: (mover: motor), (1.0,), {'group': 'PLACEHOLDER'}
 wait: (None), (), {'group': 'PLACEHOLDER'}
@@ -33,5 +33,5 @@ read: (reader: det), (), {}
 read: (mover: motor), (), {}
 save: (None), (), {}
 close_run: (None), (), {}
-unstage: (mover: motor), (), {}
 unstage: (reader: det), (), {}
+unstage: (mover: motor), (), {}

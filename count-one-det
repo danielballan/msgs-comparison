@@ -1,6 +1,6 @@
 Count([det])
 stage: (reader: det), (), {}
-open_run: (None), (), {'num_steps': 1, 'detectors': ['det'], 'plan_name': 'count', 'plan_args': {'detectors': ['reader: det'], 'num': 1}}
+open_run: (None), (), {'num_steps': 1, 'detectors': ['det'], 'plan_args': {'num': 1, 'detectors': ['reader: det']}, 'plan_name': 'count'}
 checkpoint: (None), (), {}
 trigger: (reader: det), (), {'group': 'PLACEHOLDER'}
 wait: (None), (), {'group': 'PLACEHOLDER'}

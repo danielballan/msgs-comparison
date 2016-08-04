@@ -1,7 +1,7 @@
 Count([det1, det2], 2)
 stage: (reader: det1), (), {}
 stage: (reader: det2), (), {}
-open_run: (None), (), {'num_steps': 2, 'detectors': ['det1', 'det2'], 'plan_name': 'count', 'plan_args': {'detectors': ['reader: det1', 'reader: det2'], 'num': 2}}
+open_run: (None), (), {'num_steps': 2, 'detectors': ['det1', 'det2'], 'plan_args': {'num': 2, 'detectors': ['reader: det1', 'reader: det2']}, 'plan_name': 'count'}
 checkpoint: (None), (), {}
 trigger: (reader: det1), (), {'group': 'PLACEHOLDER'}
 trigger: (reader: det2), (), {'group': 'PLACEHOLDER'}
@@ -21,5 +21,5 @@ read: (reader: det2), (), {}
 save: (None), (), {}
 sleep: (None), (0,), {}
 close_run: (None), (), {}
-unstage: (reader: det2), (), {}
 unstage: (reader: det1), (), {}
+unstage: (reader: det2), (), {}
