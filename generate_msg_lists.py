@@ -1,3 +1,4 @@
+import asyncio
 import os
 import sys
 from bluesky.examples import det, motor, motor1, motor2, MockFlyer, det1, det2
@@ -6,7 +7,9 @@ from bluesky.plans import (Count, AbsScanPlan, AbsListScanPlan, DeltaListScanPla
 
 
 count_with_flyers = Count([det])
-count_with_flyers.flyers = [MockFlyer(det, motor)]
+count_with_flyers.flyers = [MockFlyer(det, motor, loop=asyncio.new_event_loop())]
+mf = count_with_flyers.flyers[0]
+mf.root = mf
 
 plans = {'count-one-det': 'Count([det])',
          'count-two-dets': 'Count([det1, det2], 2)',
@@ -24,6 +27,8 @@ def main(path):
         with open(os.path.join(path, name), 'w') as f:
             f.write(plan + "\n")
             for msg in list(eval(plan)):
+                if 'group' in msg.kwargs:
+                    msg.kwargs['group'] = 'PLACEHOLDER'
                 f.write(repr(msg) + "\n")
 
     

@@ -1,28 +1,25 @@
 Count([det1, det2], 2)
 stage: (reader: det1), (), {}
 stage: (reader: det2), (), {}
-open_run: (None), (), {'plan_type': 'Count', 'plan_args': {'delay': '0', 'detectors': '[reader: det1, reader: det2]', 'num': '2'}, 'detectors': ['det1', 'det2']}
-wait: (None), ('_flyers',), {}
+open_run: (None), (), {'num_steps': 2, 'detectors': ['det1', 'det2'], 'plan_name': 'count', 'plan_args': {'detectors': ['reader: det1', 'reader: det2'], 'num': 2}}
 checkpoint: (None), (), {}
+trigger: (reader: det1), (), {'group': 'PLACEHOLDER'}
+trigger: (reader: det2), (), {'group': 'PLACEHOLDER'}
+wait: (None), (), {'group': 'PLACEHOLDER'}
 create: (None), (), {'name': 'primary'}
-trigger: (reader: det1), (), {'block_group': 'A'}
-trigger: (reader: det2), (), {'block_group': 'A'}
-wait: (None), ('A',), {}
 read: (reader: det1), (), {}
 read: (reader: det2), (), {}
 save: (None), (), {}
 sleep: (None), (0,), {}
 checkpoint: (None), (), {}
+trigger: (reader: det1), (), {'group': 'PLACEHOLDER'}
+trigger: (reader: det2), (), {'group': 'PLACEHOLDER'}
+wait: (None), (), {'group': 'PLACEHOLDER'}
 create: (None), (), {'name': 'primary'}
-trigger: (reader: det1), (), {'block_group': 'A'}
-trigger: (reader: det2), (), {'block_group': 'A'}
-wait: (None), ('A',), {}
 read: (reader: det1), (), {}
 read: (reader: det2), (), {}
 save: (None), (), {}
 sleep: (None), (0,), {}
-wait: (None), ('_flyers',), {}
 close_run: (None), (), {}
 unstage: (reader: det2), (), {}
 unstage: (reader: det1), (), {}
-checkpoint: (None), (), {}
